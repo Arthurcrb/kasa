@@ -1,0 +1,62 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.navigation {
+    ul {
+        display: flex;
+        margin: 30px;
+        @include mixin.xs {
+            justify-content: right;
+            margin: 30px 0px;
+        }
+        @include mixin.xxs {
+            margin: 20px 0px 20px;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 10px;
+            @include mixin.xs {
+                font-size: 1rem;
+            }
+
+            li {
+                color: var(--primary);
+                transition: 0.2s;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+a[aria-current='page'] {
+    position: relative;
+
+    &::after {
+        content: '';
+        height: 4px;
+        width: 0;
+        background: var(--primary);
+        position: absolute;
+        border-radius: 10px;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-animation: anim 0.3s ease forwards;
+        animation: anim 0.6s ease forwards;
+
+        @include mixin.xs {
+            height: 2px;
+        }
+
+        @-webkit-keyframes anim {
+            to {
+                width: 100%;
+            }
+        }
+        @keyframes anim {
+            to {
+                width: 100%;
+            }
+        }
+    }
+}

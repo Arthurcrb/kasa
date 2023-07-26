@@ -1,0 +1,77 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.carrousel {
+    margin: auto;
+    position: relative;
+    height: 415px;
+    border-radius: 25px;
+    width: 85vw;
+    max-width: 1140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 80px;
+    @include mixin.xs {
+        width: 100%;
+        margin-bottom: 30px;
+        @include mixin.xs {
+            height: 280px;
+        }
+    }
+}
+
+.carrouselpicture {
+    border-radius: 25%;
+    height: 415px;
+    object-fit: cover;
+    width: 85vw;
+    max-width: 1140px;
+    border-radius: 25px;
+    margin-left: 10px;
+    @include mixin.xs {
+        height: 280px;
+        margin-left: 0px;
+    }
+}
+
+.carrouselpictureactive {
+    width: 100%;
+}
+
+.carrouselpictureinactive {
+    width: 100%;
+}
+
+.leftArrow {
+    top: calc(50% - 52px);
+    z-index: 1;
+    width: 46px;
+    height: 72px;
+    position: absolute;
+    cursor: pointer;
+    margin-left: 40px;
+    @include mixin.xs {
+        top: calc(50% - 32px);
+        width: auto;
+        height: 42px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.rightArrow {
+    top: calc(50% - 52px);
+    cursor: pointer;
+    z-index: 1;
+    width: 46px;
+    height: 72px;
+    position: absolute;
+    right: 0;
+    @include mixin.xs {
+        top: calc(50% - 32px);
+        width: auto;
+        height: 42px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

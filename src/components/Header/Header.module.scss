@@ -1,0 +1,21 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.header {
+    padding: 10px 20px;
+    margin-top: 30px;
+    width: 100%;
+    @include mixin.xs {
+        padding: 10px 30px;
+    }
+    @include mixin.xxs {
+        display: flex;
+        flex-direction: column;
+    }
+    img {
+        width: 150px;
+        cursor: pointer;
+        @include mixin.xs {
+            width: 100px;
+        }
+    }
+}

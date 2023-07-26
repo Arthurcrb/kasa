@@ -1,0 +1,89 @@
+@use '../../assets/styles/mixins' as mixin;
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    max-width: 1130px;
+    margin: auto;
+    width: 100%;
+}
+
+h1 {
+    @include mixin.xs {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+}
+h2,
+h3,
+h4 {
+    margin: 0;
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.navigation {
+    ul {
+        display: flex;
+        margin: 30px;
+
+        a {
+            text-decoration: none;
+            padding: 10px;
+
+            li {
+                color: var(--primary);
+                transition: 0.2s;
+                cursor: pointer;
+            }
+        }
+
+        .nav-active {
+            position: relative;
+
+            &::after {
+                content: '';
+                height: 4px;
+                width: 0;
+                background: var(--primary);
+                position: absolute;
+                border-radius: 10px;
+                bottom: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-animation: anim 0.3s ease forwards;
+                animation: anim 0.6s ease forwards;
+
+                @-webkit-keyframes anim {
+                    to {
+                        width: 100%;
+                    }
+                }
+                @keyframes anim {
+                    to {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
