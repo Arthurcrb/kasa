@@ -1,15 +1,17 @@
 import styles from "./Header.module.scss";
-import Navigation from '../Navigation/Navigation';
-import Logo from '../Logo/Logo';
+import Nav from "../Nav/Nav";
+import logo from "../../assets/images/LOGO.png";
+import { Link } from "react-router-dom";
 
-
-function Header() {
- return (
-  <header className={`${styles.header} d-flex flex-row align-items-center justify-content-between`}>
-    <Logo />
-    <Navigation/>
-  </header>
- ) 
-}
+const Header = () => {
+    return (
+        <div className={styles.header}>
+            <Link to="/">
+                <img src={logo} alt="logo Kasa" className={styles.logoKasa} />
+            </Link>
+            <Nav />
+        </div>
+    );
+};
 
 export default Header;

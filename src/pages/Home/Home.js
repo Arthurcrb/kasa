@@ -1,23 +1,23 @@
-import data from '../../data/accommodations.json'
-import Topbanner from '../../components/Topbanner/Topbanner'
-import image from '../../assets/images/homeban.png'
-import styles from './Homepage.module.scss'
-import Card from '../../components/Card/Cards'
+import data from "../../data/accommodations.json";
+import Banner from "../../components/Banner/Banner";
+import ban1 from "../../assets/images/ban1.png";
+import styles from "./Home.module.scss";
+import Card from "../../components/Card/Card";
 
-export default function Homepage() {
-    const accommodations = data
+const Home = () => {
+    const accommodations = data;
 
     return (
         <>
-            <div className="home__banner">
-                <Topbanner
-                    image={image}
+            <div>
+                <Banner
+                    image={ban1}
                     title="Chez vous, partout et ailleurs"
-                    alt="bannière Kasa, leader de la location entre particuliers en France"
+                    alt="Kasa : agence de location d'appartements en France"
                 />
             </div>
 
-            <div className="container">
+            <div className={styles.container}>
                 <div className={`card p-20 ${styles.contentCard}`}>
                     <div className={styles.grid}>
                         {accommodations.map((a) => (
@@ -32,5 +32,7 @@ export default function Homepage() {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
+
+export default Home;

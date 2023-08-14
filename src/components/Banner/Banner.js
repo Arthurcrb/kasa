@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './Topbanner.module.scss'
+import React from "react";
+import styles from "./Banner.module.scss";
 
-const Topbanner = ({ image, alt, title }) => {
+const Banner = ({ image, alt, title }) => {
     return (
         <div className={styles.banner}>
             <img src={image} alt={alt} className={styles.banner__img} />
@@ -9,7 +9,7 @@ const Topbanner = ({ image, alt, title }) => {
                 <div className={styles.banner__text}>{title}</div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Topbanner
+export default Banner;

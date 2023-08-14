@@ -1,18 +1,18 @@
-import React from 'react'
-import accommodationsData from '../../data/accommodations.json'
-import styles from './Accommodations.module.scss'
-import Collapse from '../../components/Collapse/Collapse'
-import { useParams } from 'react-router-dom'
-import Stars from '../../components/Star/Star'
-import Carroussel from '../../components/Carroussel/Carroussel'
-import Error from '../../pages/Error/Error'
+import React from "react";
+import accommodationsData from "../../data/accommodations.json";
+import styles from "./Accommodations.module.scss";
+import Collapse from "../../components/Collapse/Collapse";
+import { useParams } from "react-router-dom";
+import Stars from "../../components/Star/Star";
+import Carroussel from "../../components/Carroussel/Carroussel";
+import Error from "../../pages/Error/Error";
 
-function Accommodations() {
-    const { id } = useParams()
-    const property = accommodationsData.find((a) => a.id === id)
+const Accommodations = () => {
+    const { id } = useParams();
+    const property = accommodationsData.find((a) => a.id === id);
 
     if (!property) {
-        return <Error />
+        return <Error />;
     }
 
     return (
@@ -74,7 +74,7 @@ function Accommodations() {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Accommodations
+export default Accommodations;
