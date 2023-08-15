@@ -1,5 +1,6 @@
 .aboutContainer {
-  width: 100%;
+  max-width: 1240px;
+  margin: auto;
   margin-bottom: 50px;
 }
 
@@ -8,7 +9,7 @@
 .aboutBanner {
   width: 100%;
   height: 223px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   position: relative;
 
   .overlay {

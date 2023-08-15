@@ -1,37 +1,39 @@
-import data from "../../data/accommodations.json";
+import React from "react";
 import Banner from "../../components/Banner/Banner";
-import ban1 from "../../assets/images/ban1.png";
-import styles from "./Home.module.scss";
 import Card from "../../components/Card/Card";
+import ban1 from "../../assets/images/ban1.png";
+import data from "../../flats.json";
+import styles from "./Home.module.scss";
 
 const Home = () => {
-    const accommodations = data;
+    const flats = data;
 
     return (
-        <>
-            <div>
-                <Banner
-                    image={ban1}
-                    title="Chez vous, partout et ailleurs"
-                    alt="Kasa : agence de location d'appartements en France"
-                />
-            </div>
+        <div className={styles.home}>
+            {/* Bannière */}
+            <Banner
+                image={ban1} //
+                title="Chez vous, partout et ailleurs"
+                alt="Kasa : agence de location d'appartements en France"
+            />
 
             <div className={styles.container}>
-                <div className={`card p-20 ${styles.contentCard}`}>
-                    <div className={styles.grid}>
-                        {accommodations.map((a) => (
+                {/* Cartes sur l'accueil */}
+                <div className={styles.homeCard}>
+                    <div className={styles.flatsCard}>
+                        {/* Boucle pour afficher chaque carte d'appartement */}
+                        {flats.map((flat) => (
                             <Card
-                                key={a.id}
-                                id={a.id}
-                                title={a.title}
-                                cover={a.cover}
+                                key={flat.id}
+                                id={flat.id}
+                                title={flat.title}
+                                cover={flat.cover}
                             />
                         ))}
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

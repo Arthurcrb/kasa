@@ -1,12 +1,12 @@
 @use '../../assets/styles/mixins' as mixin;
 
+
 .carrousel {
     margin: auto;
     position: relative;
-    height: 415px;
     border-radius: 25px;
-    width: 85vw;
-    max-width: 1140px;
+    height: 415px;
+    max-width: 1240px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,24 +25,23 @@
     height: 415px;
     object-fit: cover;
     width: 85vw;
-    max-width: 1140px;
+    max-width: 1240px;
     border-radius: 25px;
     margin-left: 10px;
     @include mixin.xs {
         height: 280px;
-        
     }
 }
 
-.carrouselpictureactive {
+.activeSlide {
     width: 100%;
 }
 
-.carrouselpictureinactive {
+.inactiveSlide {
     width: 100%;
 }
 
-.leftArrow {
+.previewArrow {
     top: calc(50% - 52px);
     z-index: 1;
     width: 46px;
@@ -51,15 +50,14 @@
     cursor: pointer;
     margin-left: 40px;
     @include mixin.xs {
-        top: calc(50% - 32px);
+        margin-left: 30px;
+        top: calc(50% - 20px);
         width: auto;
-        height: 42px;
-        margin-left: 10px;
-        margin-right: 10px;
+        height: 30px;
     }
 }
 
-.rightArrow {
+.nextArrow {
     top: calc(50% - 52px);
     cursor: pointer;
     z-index: 1;
@@ -68,10 +66,18 @@
     position: absolute;
     right: 0;
     @include mixin.xs {
-        top: calc(50% - 32px);
+        margin-right: 30px;
+        top: calc(50% - 20px);
         width: auto;
-        height: 42px;
-        margin-left: 10px;
-        margin-right: 10px;
+        height: 30px;
     }
+}
+
+
+.numberImg{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    text-align: center;
+    color:#fff
 }

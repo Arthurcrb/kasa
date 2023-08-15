@@ -1,51 +1,31 @@
 @use '../../assets/styles/mixins' as mixin;
 
-.grid {
+.home{
+    max-width: 1240px;
+    margin: auto;
+}
+
+.homeCard {
+    max-width: 1240px;
+    background: #f6f6f6;
+    border-radius: 25px;
+}
+
+.flatsCard {
     display: grid;
-    place-content: center;
-    grid-template-columns: repeat(3, 340px);
-    gap: 30px;
-    @include mixin.lg-lt {
-        grid-template-columns: repeat(2, 530px);
-    }
-    @include mixin.md {
-        grid-template-columns: repeat(2, 400px);
-        gap: 20px;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 50px;
+    margin: 0 auto; 
+    max-width: 1240px; 
+    padding: 20px;
+    margin-bottom: 30px;
+    @include mixin.lg-lt{
+        grid-template-columns: repeat(2, 1fr);
     }
     @include mixin.xs {
         grid-template-columns: 1fr;
     }
 }
 
-.banner {
-    display: flex;
-    width: 100%;
-    height: 223px;
-    border-radius: 25px;
-    padding: 15px;
-}
 
-.bannerTitle {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-size: 2.8rem;
-    font-weight: 500;
 
-    @include mixin.lg-lt {
-        font-size: 2.4rem;
-    }
-    @include mixin.md {
-        font-size: 2rem;
-    }
-    @include mixin.xs {
-        font-size: 1.6rem;
-    }
-}
-
-.contentCard {
-    max-width: 1130px;
-    width: 100%;
-}

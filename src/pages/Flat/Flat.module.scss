@@ -2,7 +2,8 @@
 
 .headerAccommodation {
     display: flex;
-    width: 100%;
+    max-width: 1240px;
+    margin: auto;
     @include mixin.xs {
         flex-direction: column;
         padding: 20px;
@@ -70,7 +71,8 @@
 
 .accomodationContainer {
     display: flex;
-    width: 100%;
+    max-width: 1240px;
+    margin: auto;
     justify-content: space-between;
     margin-bottom: 40px;
     @include mixin.xs {

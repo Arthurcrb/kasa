@@ -4,7 +4,7 @@ import styles from "./Nav.module.scss";
 
 const Nav = () => {
     return (
-        <div className={styles.navigation}>
+        <div className={styles.nav}>
             <ul>
                 <NavLink to="/">
                     <li>Accueil</li>

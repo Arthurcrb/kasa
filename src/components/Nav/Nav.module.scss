@@ -1,28 +1,21 @@
 @use '../../assets/styles/mixins' as mixin;
 
-.navigation {
+.nav {
     ul {
         display: flex;
-        margin: 30px;
         @include mixin.xs {
             justify-content: right;
             margin: 30px 0px;
         }
-        @include mixin.xxs {
-            margin: 20px 0px 20px;
+        li {
+            color: var(--color-primary);
+            cursor: pointer;
         }
 
         a {
-            text-decoration: none;
-            padding: 10px;
+            padding: 15px;
             @include mixin.xs {
                 font-size: 1rem;
-            }
-
-            li {
-                color: var(--primary);
-                transition: 0.2s;
-                cursor: pointer;
             }
         }
     }
@@ -35,7 +28,7 @@ a[aria-current='page'] {
         content: '';
         height: 4px;
         width: 0;
-        background: var(--primary);
+        background: var(--color-primary);
         position: absolute;
         border-radius: 10px;
         bottom: 0px;

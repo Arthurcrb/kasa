@@ -1,57 +1,77 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import style from './Carroussel.module.scss';
-import leftArrow from '../../assets/images/leftArrow.png';
-import rightArrow from '../../assets/images/rightArrow.png';
+import React, { useState, useEffect, useCallback } from "react";
+import style from "./Carroussel.module.scss";
+import previewArrow from "../../assets/images/preview.png";
+import nextArrow from "../../assets/images/next.png";
 
-const Carroussel = ({ pictures }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const length = pictures.length;
+const Carroussel = ({ slides }) => {
+    const [currentIndex, setCurrentIndex] = useState(0); // État pour stocker l'index du slide actuel.
+    const length = slides.length; // Nombre total de slides
 
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((currentIndex + 1) % length);
-  }, [currentIndex, length]);
+    // On passe au slide suivant
+    const nextSlide = useCallback(() => {
+        setCurrentIndex((currentIndex + 1) % length); // Incrémente l'index en boucle
+    }, [currentIndex, length]);
 
-  const prevSlide = useCallback(() => {
-    setCurrentIndex((currentIndex - 1 + length) % length);
-  }, [currentIndex, length]);
+    // On passe au slide précédent
+    const prevSlide = useCallback(() => {
+        setCurrentIndex((currentIndex - 1 + length) % length); // Décrémente l'index en boucle
+    }, [currentIndex, length]);
 
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 3000);
+    // Effet pour automatiser le changement de slide toutes les 3 secondes
+    useEffect(() => {
+        const interval = setInterval(nextSlide, 3000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [nextSlide]);
+        return () => {
+            clearInterval(interval);
+        };
+    }, [nextSlide]);
 
-  return (
-    <div className={style.carrousel}>
-      {pictures.map((picture, index) => (
-        <div
-          key={index}
-          className={`${style.carrouselpicture} ${
-            index === currentIndex ? style.carrouselpictureactive : style.carrouselpictureinactive
-          }`}
-        >
-          {index === currentIndex && <img src={picture} alt={`Slide ${index}`} className={style.carrouselpicture} />}
+    return (
+        <div className={style.carrousel}>
+            {/* Affichage des slides */}
+            {slides.map((slide, index) => (
+                <div
+                    key={index}
+                    className={`${style.carrouselpicture} ${
+                        index === currentIndex
+                            ? style.activeSlide
+                            : style.inactiveSlide
+                    }`}
+                >
+                    {index === currentIndex && (
+                        <img
+                            src={slide}
+                            alt={`Slide ${index}`}
+                            className={style.carrouselpicture}
+                        />
+                    )}
+                </div>
+            ))}
+
+            {/* Affichage des flèches de navigation et du numéro du slide */}
+            {length > 1 && (
+                <div className={style.slideContainer}>
+                    <div className={style.previous} onClick={prevSlide}>
+                        <img
+                            src={previewArrow}
+                            alt="Retour"
+                            className={style.previewArrow}
+                        />
+                    </div>
+                    <div className={style.next} onClick={nextSlide}>
+                        <img
+                            src={nextArrow}
+                            alt="Suivant"
+                            className={style.nextArrow}
+                        />
+                    </div>
+                    <div className={style.numberImg}>
+                        {currentIndex + 1} / {length}
+                    </div>
+                </div>
+            )}
         </div>
-      ))}
-
-      {length > 1 && (
-        <>
-          <div className={style.previous} onClick={prevSlide}>
-            <img src={leftArrow} alt="Slide précédent" className={style.leftArrow} />
-          </div>
-          <div className={style.next} onClick={nextSlide}>
-            <img src={rightArrow} alt="Slide suivant" className={style.rightArrow} />
-          </div>
-        </>
-      )}
-
-      <div className={style.number}>
-        {currentIndex + 1} / {length}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Carroussel;

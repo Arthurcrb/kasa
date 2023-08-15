@@ -1,8 +1,11 @@
-
+@use './mixins' as mixin;
 
 .card {
     border-radius: 20px;
     margin-bottom: 25px;
-    padding-left: 15px;
-    padding-right: 15px;
+    @include mixin.xs {
+      margin-bottom: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+  }
   }
