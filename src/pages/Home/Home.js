@@ -12,7 +12,7 @@ const Home = () => {
         <div className={styles.home}>
             {/* Bannière */}
             <Banner
-                image={ban1} //
+                image={ban1}
                 title="Chez vous, partout et ailleurs"
                 alt="Kasa : agence de location d'appartements en France"
             />

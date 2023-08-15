@@ -1,6 +1,6 @@
 @use '../../assets/styles/mixins' as mixin;
 
-.headerAccommodation {
+.headFlat{
     display: flex;
     max-width: 1240px;
     margin: auto;
@@ -16,11 +16,7 @@
     }
 }
 
-.location {
-    height: 10px;
-}
-
-.headerLeftAccomodation {
+.headLeftFlat {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -28,7 +24,7 @@
         width: 100%;
     }
 }
-.headerRightAccomodation {
+.headRightFlat {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -40,6 +36,10 @@
         align-items: center;
         justify-content: space-between;
     }
+}
+
+.location {
+    height: 10px;
 }
 
 .host {
@@ -69,7 +69,7 @@
     text-align: right;
 }
 
-.accomodationContainer {
+.flatContent {
     display: flex;
     max-width: 1240px;
     margin: auto;
@@ -86,7 +86,7 @@
     }
 }
 
-.descriptionContainer {
+.description {
     width: 100%;
     margin-right: 45px;
     @include mixin.xs {
@@ -95,7 +95,7 @@
     }
 }
 
-.equipmentsContainer {
+.equipments {
     width: 100%;
     @include mixin.xs {
         width: 100%;

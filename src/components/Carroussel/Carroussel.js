@@ -32,7 +32,7 @@ const Carroussel = ({ slides }) => {
             {slides.map((slide, index) => (
                 <div
                     key={index}
-                    className={`${style.carrouselpicture} ${
+                    className={`${style.slide} ${
                         index === currentIndex
                             ? style.activeSlide
                             : style.inactiveSlide
@@ -42,7 +42,7 @@ const Carroussel = ({ slides }) => {
                         <img
                             src={slide}
                             alt={`Slide ${index}`}
-                            className={style.carrouselpicture}
+                            className={style.slide}
                         />
                     )}
                 </div>

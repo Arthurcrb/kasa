@@ -25,7 +25,7 @@ const Collapse = ({
     return (
         <div
             className={`card ${
-                pageStyle === "accommodation" ? "cardAccommodation" : ""
+                pageStyle === "flat" ? "cardAccommodation" : ""
             }`}
         >
             <div className={styles.header} onClick={toggleCard}>

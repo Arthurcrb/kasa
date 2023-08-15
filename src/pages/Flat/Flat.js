@@ -1,11 +1,11 @@
 import React from "react";
 import flatsData from "../../flats.json";
+import Error from "../Error/Error";
 import { useParams } from "react-router-dom";
+import Carroussel from "../../components/Carroussel/Carroussel";
 import styles from "./Flat.module.scss";
 import Collapse from "../../components/Collapse/Collapse";
 import Stars from "../../components/Star/Star";
-import Carroussel from "../../components/Carroussel/Carroussel";
-import Error from "../Error/Error";
 
 const Flat = () => {
     const { id } = useParams();
@@ -34,9 +34,9 @@ const Flat = () => {
             <Carroussel slides={pictures} />
 
             {/* En-tête de l'hébergement */}
-            <div className={styles.headerAccommodation}>
+            <div className={styles.headFlat}>
                 {/* Partie gauche de l'en-tête */}
-                <div className={styles.headerLeftAccomodation}>
+                <div className={styles.headLeftFlat}>
                     <h1 className={styles.titleAccomodation}>{title}</h1>
                     <p className={styles.location}>{location}</p>
                     <p className={styles.tags}>
@@ -50,7 +50,7 @@ const Flat = () => {
                 </div>
 
                 {/* Partie droite de l'en-tête */}
-                <div className={styles.headerRightAccomodation}>
+                <div className={styles.headRightFlat}>
                     <div className={styles.host}>
                         <p className={styles.name}>{host.name}</p>
                         <img
@@ -67,25 +67,25 @@ const Flat = () => {
             </div>
 
             {/* Conteneur pour la description et les équipements */}
-            <div className={styles.accomodationContainer}>
+            <div className={styles.flatContent}>
                 {/* Conteneur de la description */}
-                <div className={styles.descriptionContainer}>
+                <div className={styles.description}>
                     <Collapse
                         titleAccommodation="Description"
                         textDescription={description}
                         isDefaultOpen={true}
-                        pageStyle="accomodation"
+                        pageStyle="flat"
                     />
                 </div>
                 {/* Conteneur des équipements */}
-                <div className={styles.equipmentsContainer}>
+                <div className={styles.equipments}>
                     <Collapse
                         titleAccommodation="Equipements"
                         textEquipments={equipments.map((equipment, index) => (
                             <li key={index}>{equipment}</li>
                         ))}
                         isDefaultOpen={true}
-                        pageStyle="accomodation"
+                        pageStyle="flat"
                     />
                 </div>
             </div>
