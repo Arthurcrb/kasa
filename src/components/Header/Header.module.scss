@@ -1,0 +1,20 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1240px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+.logoKasa {
+    width: 180px;
+    cursor: pointer;
+    @include mixin.xs {
+        width: 120px;
+        margin-top: 30px;
+    }
+}

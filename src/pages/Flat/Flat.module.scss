@@ -1,0 +1,125 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.headFlat{
+    display: flex;
+    max-width: 1240px;
+    margin: auto;
+    @include mixin.xs {
+        flex-direction: column;
+        padding: 20px;
+    }
+    @include mixin.xm {
+        padding: 20px;
+    }
+    @include mixin.md {
+        padding: 40px;
+    }
+}
+
+.headLeftFlat {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    @include mixin.xs {
+        width: 100%;
+    }
+}
+.headRightFlat {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: flex-end;
+    @include mixin.xs {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.location {
+    height: 10px;
+}
+
+.host {
+    display: flex;
+    height: 110px;
+    @include mixin.xs {
+        order: 2;
+        align-items: center;
+    }
+}
+
+.name {
+    width: 50px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.hostPicture {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    margin-left: 10px;
+}
+
+.ratings {
+    height: 40px;
+    text-align: right;
+}
+
+.flatContent {
+    display: flex;
+    max-width: 1240px;
+    margin: auto;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    @include mixin.xs {
+        flex-direction: column;
+    }
+    @include mixin.xm {
+        padding: 20px;
+    }
+    @include mixin.md {
+        padding: 40px;
+    }
+}
+
+.description {
+    width: 100%;
+    margin-right: 45px;
+    @include mixin.xs {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+}
+
+.equipments {
+    width: 100%;
+    @include mixin.xs {
+        width: 100%;
+    }
+}
+
+.tag {
+    margin-right: 15px;
+    background: #ff6060;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    @include mixin.xs {
+        padding: 5px 10px;
+        margin-bottom: 15px;
+    }
+}
+
+p.tags {
+    display: flex;
+    @include mixin.xs {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,31 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.home{
+    max-width: 1240px;
+    margin: auto;
+}
+
+.homeCard {
+    max-width: 1240px;
+    background: #f6f6f6;
+    border-radius: 25px;
+}
+
+.flatsCard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 50px;
+    margin: 0 auto; 
+    max-width: 1240px; 
+    padding: 20px;
+    margin-bottom: 30px;
+    @include mixin.lg-lt{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include mixin.xs {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
