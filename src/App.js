@@ -1,6 +1,6 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Flat from "./pages/Flat/Flat";
@@ -8,7 +8,7 @@ import Error from "./pages/Error/Error";
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -17,7 +17,7 @@ function App() {
                 <Route path="*" element={<Error />} />
             </Routes>
             <Footer />
-        </BrowserRouter>
+            </HashRouter>
     );
 }
 
